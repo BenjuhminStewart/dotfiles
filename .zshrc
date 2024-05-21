@@ -49,9 +49,6 @@ source ~/.zsh/plugins/zsh-z/zsh-z.plugin.zsh
 # Source Completions
 source ~/.zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
 
-# Source You Should Use
-source ~/.zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
-
 # Source Zsh Bat
 source ~/.zsh/plugins/zsh-bat/zsh-bat.plugin.zsh
 
