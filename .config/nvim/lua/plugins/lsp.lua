@@ -51,9 +51,10 @@ local servers = {
       usePlaceholders = true,
     }
   },
+
   -- pyright = {},
   -- rust_analyzer = {},
-  -- tsserver = {},
+  -- tsserver
 
   lua_ls = {
     Lua = {
