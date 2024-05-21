@@ -1,0 +1,104 @@
+{
+	"Println": {
+		"prefix": "pl",
+		"body": [
+			"fmt.Println($1)"
+		],
+		"description": "Print to console with newline"
+	},
+
+	"Printf": {
+		"prefix": "pf",
+		"body": [
+			"fmt.Printf(\"$1%v\\n\", $2)"
+		],
+		"description": "Print to console with formatting"
+	
+	},
+
+	"Print Variable": {
+		"prefix": "pv",
+		"body": [
+			"fmt.Printf(\"${1:var_name} (%T) >> %v\\n\", ${1:var_name}, ${1:var_name})"
+		],
+		"description": "Print variable to console with formatting"
+	},
+
+	"Get Max Golang": {
+		"prefix": "max",
+		"body": [
+			"${1:max} = int(math.Max(float64(${1:max}), float64(${2:count})))"
+		],
+		"description": "max(a,b) in golang"
+
+	},
+
+	"Contains in map": {
+		"prefix": "contains",
+		"body" : [
+			"if _, ok := ${1:dict[key]}; ok {",
+			"\t${2:// Input Code Here}",
+			"}"
+		],
+		"description": "Check if key exists in map"
+	},
+
+	"Random Array of Integers": {
+		"prefix": "rai",
+		"body": [
+			"func RandomArrayOfIntegers(size, maxValue int) []int {",
+			"\tarr := make([]int, size)",
+			"\tfor i := 0; i < size; i++ {",
+			"\t\tarr[i] = rand.Intn(maxValue)",
+			"\t}",
+			"\treturn arr",
+			"}"
+		],
+		"description": "Generate random array of integers"
+	},
+
+	"Random Array of Floats": {
+		"prefix": "raf",
+		"body": [
+			"func RandomArrayOfFloats(size, maxValue, precision int) []float64 {",
+			"\tarr := make([]float64, size)",
+			"\tfor i := 0; i < size; i++ {",
+			"\t\tnum := rand.Float64() * float64(maxValue)",
+			"\t\tratio := math.Pow(10, float64(precision))",
+			"\t\tarr[i] = math.Round(num*ratio) / ratio",
+			"\t}",
+			"\treturn arr",
+			"}"
+		],
+		"description": "Generate random array of floats"
+	},
+
+	"Random Array of Strings": {
+		"prefix": "ras",
+		"body": [
+			"func RandomArrayOfStrings(size, length int) []string {",
+			"\tarr := make([]string, size)",
+			"\tfor i := 0; i < size; i++ {",
+			"\t\tarr[i] = RandomString(length)",
+			"\t}",
+			"\treturn arr",
+			"}"
+		],
+		"description": "Generate random array of random strings"
+	},
+
+	"Random String of letters": {
+		"prefix": "rs",
+		"body": [
+			"func RandomString(length int) string {",
+			"\tletters := []rune(\"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\")",
+			"\tb := make([]rune, length)",
+			"\tfor i := range b {",
+			"\t\tb[i] = letters[rand.Intn(len(letters))]",
+			"\t}",
+			"\treturn string(b)",
+			"}"
+		],
+		"description": "Generate random string of letters"
+	} 
+}
