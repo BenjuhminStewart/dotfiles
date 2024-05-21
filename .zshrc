@@ -29,7 +29,7 @@ source ~/.zsh/aliases.zsh
 
 
 # Source Custom Scripts
-for file in $(find ~/.zsh/functions -type f); 
+for file in $(find ~/dotfiles/.zsh/functions -type f); 
 do
     source $file; 
 done
