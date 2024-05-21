@@ -21,7 +21,7 @@ function kpid {
 function sa {
     echo
     FOUND=false
-    grep "# alias \<$1\>" ~/.zsh/aliases.zsh | while read -r line ; do
+    grep "# alias \<$1\>" ~/dotfiles/.zsh/aliases.zsh | while read -r line ; do
             line=(${(s/# /)line})
             FOUND=true
             hook=${arr[1]}
@@ -49,7 +49,7 @@ function ga {
     FOUND=false
     I=0
     
-    grep "# alias " ~/.zsh/aliases.zsh | while read -r line ; do
+    grep "# alias " ~/dotfiles/.zsh/aliases.zsh | while read -r line ; do
         line=(${(s/# /)line})
         FOUND=true
         arr=(${(@s/|/)line})
@@ -75,7 +75,7 @@ function ga {
 function sf {
     echo
     FOUND=false
-    for file in $(find ~/.zsh/functions -type f) ; do
+    for file in $(find ~/dotfiles/.zsh/functions -type f) ; do
         I=0
         grep "# function \<$1\> " $file  -A 2 | while read -r line ; do
             if [[ $I -eq 0 ]] ;
@@ -115,7 +115,7 @@ function gf {
     print -P "User Defined Functions\n%F{247}---------------------------------------------------------------"
     FOUND=false
     
-    for file in $(find ~/.zsh/functions -type f) ; do
+    for file in $(find ~/dotfiles/.zsh/functions -type f) ; do
         grep "# function " $file | while read -r line ; do
             if [[ "$line" == *"grep"* ]]; then
                 # Do nothing
@@ -159,7 +159,7 @@ function se {
 # function euf [FUNCTION] | opens vscode to specified [FUNCTION]
 function euf {
 
-    for file in $(find ~/.zsh/functions -type f) ; do
+    for file in $(find ~/dotfiles/.zsh/functions -type f) ; do
         line="$(grep "\<function $1\>" $file -nHo)"
         arr=(${(@s/:/)line})
         file=${arr[1]}
