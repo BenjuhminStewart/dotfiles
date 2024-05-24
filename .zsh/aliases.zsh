@@ -81,4 +81,8 @@ alias gtc='go test -cover'
 alias gtco='go test -coverprofile=coverage.out && go tool cover -html=coverage.out'
 # alias gtco|go test -coverprofile=coverage.out && go tool cover -html=coverage.out|runs go test with coverage and opens the coverage in browser
 
+alias ta='tmux attach -t'
+# alias ta|tmux attach -t|attaches to a tmux session with the name of the session
 
+alias tl='tmux ls'
+# alias tl|tmux ls|lists all tmux sessions
