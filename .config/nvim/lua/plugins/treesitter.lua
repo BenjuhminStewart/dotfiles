@@ -12,8 +12,9 @@ require('nvim-treesitter.configs').setup {
     enable_rename = true,
     enable_close = true,
     enable_close_on_slash = true,
-    filetypes = { "html", "xml", "javascript", "jsx" },
+    filetypes = { "html", "xml", "javascript", "jsx", "tsx", "typescript" },
   },
+
   highlight = { enable = true },
   indent = { enable = true },
   incremental_selection = {
