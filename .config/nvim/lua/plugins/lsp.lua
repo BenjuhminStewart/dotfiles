@@ -10,6 +10,15 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
+  -- format the file using the :Format command whenever a :w is done without having to run a mapping
+  -- make it an autocommand so that it only runs when the buffer is attached to an LSP
+  vim.api.nvim_exec([[
+    augroup kickstart-lsp-format
+      autocmd!
+      autocmd BufWritePre <buffer> Format
+    augroup END
+  ]], true)
+
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
