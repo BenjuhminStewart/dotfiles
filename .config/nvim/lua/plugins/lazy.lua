@@ -249,8 +249,6 @@ return {
 		"ThePrimeagen/harpoon",
 		config = function()
 			require("harpoon").setup({
-				-- map <leader>ha to add the current buffer as a harpoon marks
-
 			})
 		end,
 	},
