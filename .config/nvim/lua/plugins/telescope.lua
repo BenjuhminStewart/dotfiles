@@ -101,3 +101,9 @@ vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { des
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sb', require('telescope.builtin').buffers, { desc = '[S]earch [B]uffers' })
+-- hidden file find_file
+vim.keymap.set('n', '<leader>ff', function()
+  require('telescope.builtin').find_files({
+    hidden = true,
+  })
+end, { desc = '[F]earch [F]iles' })
