@@ -9,6 +9,7 @@ source ~/.zsh/themes/ben.zsh-theme
 setopt autocd
 zle_highlight=('paste:none')
 unsetopt BEEP
+KEYTIMEOUT=50
 autoload colors; colors
 
 # SET TILE
@@ -26,7 +27,6 @@ chpwd() {
         
 # ALIASES
 source ~/.zsh/aliases.zsh
-
 
 # Source Custom Scripts
 for file in $(find ~/dotfiles/.zsh/functions -type f); 
@@ -88,3 +88,28 @@ export PATH="$PATH:$HOME/go/bin"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# qmk is at ~/.local/bin/qmk
+export PATH="$HOME/.local/bin:$PATH"
+
+# rust is at ~/.cargo/bin
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Use fd instead of fzf
+
+export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude .git . "$1"
+}
+
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude .git . "$1"
+}
+
+source ~/fzf-git.sh/fzf-git.sh
+export JAVA_HOME=/opt/jdk-22.0.1.1
+
+export GOBIN=$HOME/go/bin

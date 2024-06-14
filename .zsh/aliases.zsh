@@ -35,7 +35,7 @@ alias home="cd ~ && clear"
 alias gg="~/Documents/Github"
 # alias gg|~/Documents/Github|changes directory to github directory
 
-alias o="open"
+alias o="xdg-open ."
 # alias o|open|allows for o . to open in finder
 
 alias gc="~/.config/nvim"
@@ -86,3 +86,6 @@ alias ta='tmux attach -t'
 
 alias tl='tmux ls'
 # alias tl|tmux ls|lists all tmux sessions
+
+alias untar='tar -xvzf'
+# alias untar|tar -xvzf|untars a file
