@@ -8,6 +8,7 @@ source ~/.zsh/themes/ben.zsh-theme
 
 setopt autocd
 zle_highlight=('paste:none')
+KEYTIMEOUT=100
 unsetopt BEEP
 autoload colors; colors
 
@@ -58,15 +59,6 @@ function zvm_config() {
   ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 }
 
-function my_custom_widget() {
-  exit
-}
-
-function zvm_after_lazy_keybindings() {
-  zvm_define_widget my_custom_widget
-  bindkey -M vicmd ':' my_custom_widget
-  bindkey -M visual 'n' your_visual_widget
-}
 source ~/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # fzf
@@ -88,3 +80,21 @@ export PATH="$PATH:$HOME/go/bin"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export GOBIN=~/go/bin/
+export PATH=$PATH:$GOBIN
+
+# Use fd instead of fzf
+
+export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude .git . "$1"
+}
+
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude .git . "$1"
+}
+
+source ~/fzf-git.sh/fzf-git.sh

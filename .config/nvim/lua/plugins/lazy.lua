@@ -112,11 +112,6 @@ return {
 		build = ':TSUpdate',
 	},
 
-	-- GitHub Copilot
-	{
-		"github/copilot.vim",
-	},
-
 	-- AUTO CLOSE TAGS
 	{
 		"m4xshen/autoclose.nvim",
