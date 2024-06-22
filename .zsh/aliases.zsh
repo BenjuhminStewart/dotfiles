@@ -86,3 +86,6 @@ alias ta='tmux attach -t'
 
 alias tl='tmux ls'
 # alias tl|tmux ls|lists all tmux sessions
+
+alias og='open $(git config --get remote.origin.url)'
+# alias og|open $(git config --get remote.origin.url)|opens the remote origin url in the browser
