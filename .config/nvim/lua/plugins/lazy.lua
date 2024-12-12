@@ -3,9 +3,6 @@
 -- See the kickstart.nvim README for more information
 
 return {
-	-- My plugins
-	{ dir = "~/.config/nvim/benjuhmin/plugins/test.nvim" },
-
 	-- Git related plugins
 	'tpope/vim-fugitive',
 	'tpope/vim-rhubarb',
@@ -18,6 +15,7 @@ return {
 	{
 		-- LSP Configuration & Plugins
 		'neovim/nvim-lspconfig',
+		lazy = false,
 		dependencies = {
 			-- Automatically install LSPs to stdpath for neovim
 			{ 'williamboman/mason.nvim', config = true },
@@ -29,6 +27,14 @@ return {
 
 			-- Additional lua configuration, makes nvim stuff amazing!
 			'folke/neodev.nvim',
+		},
+		opts = {
+			servers = {
+				ruby_lsp = {
+					mason = false,
+					cmd = { vim.fn.expand("~/.asdf/shims/ruby-lsp") },
+				},
+			},
 		},
 	},
 	{
@@ -48,7 +54,7 @@ return {
 	},
 
 	-- Useful plugin to show you pending keybinds.
-	{ 'folke/which-key.nvim',                            opts = {} },
+	{ 'folke/which-key.nvim',          opts = {} },
 	{
 		-- Adds git releated signs to the gutter, as well as utilities for managing changes
 		'lewis6991/gitsigns.nvim',
@@ -110,11 +116,6 @@ return {
 			'nvim-treesitter/nvim-treesitter-textobjects',
 		},
 		build = ':TSUpdate',
-	},
-
-	-- GitHub Copilot
-	{
-		"github/copilot.vim",
 	},
 
 	-- AUTO CLOSE TAGS
