@@ -28,14 +28,6 @@ return {
 			-- Additional lua configuration, makes nvim stuff amazing!
 			'folke/neodev.nvim',
 		},
-		opts = {
-			servers = {
-				ruby_lsp = {
-					mason = false,
-					cmd = { vim.fn.expand("~/.asdf/shims/ruby-lsp") },
-				},
-			},
-		},
 	},
 	{
 		-- Autocompletion
@@ -161,18 +153,6 @@ return {
 	{
 		"nvim-telescope/telescope-file-browser.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-	},
-
-	{
-		"brenton-leighton/multiple-cursors.nvim",
-		version = "*", -- Use the latest tagged version
-		opts = {}, -- This causes the plugin setup function to be called
-		keys = {
-			{ "<leader>cd", "<Cmd>MultipleCursorsAddDown<CR>", mode = { "n", "x" }, desc = "[C]ursor [D]own" },
-			{ "<C-j>",      "<Cmd>MultipleCursorsAddDown<CR>", mode = { "n", "x" }, desc = "[C]ursor [D]own" },
-			{ "<C-k>",      "<Cmd>MultipleCursorsAddUp<CR>",   mode = { "n", "x" }, desc = "[C]ursor [U]p}" },
-			{ "<leader>cu", "<Cmd>MultipleCursorsAddUp<CR>",   mode = { "n", "x" }, desc = "[C]ursor [U]p" },
-		}
 	},
 
 	-- COLORSCHEME

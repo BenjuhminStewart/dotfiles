@@ -71,6 +71,9 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+
+  ruby_lsp = {},
+  rubocop = {},
 }
 
 
@@ -94,6 +97,7 @@ mason_lspconfig.setup_handlers {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = servers[server_name],
+      filetypes = (servers[server_name] or {}).filetypes,
     }
   end,
 }
