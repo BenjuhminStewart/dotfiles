@@ -73,7 +73,6 @@ local servers = {
   },
 
   ruby_lsp = {},
-  rubocop = {},
 }
 
 
@@ -121,13 +120,5 @@ local cmp = require('cmp_nvim_lsp')
 -- ruby-lsp requires ruby version 2.7.3 or higher and nvim 0.10.0
 nvim_lsp.ruby_lsp.setup {
   cmd = { "/Users/benjamin/.asdf/shims/ruby-lsp" },
-  capabilities = cmp.default_capabilities(capabilities)
-}
-nvim_lsp.solargraph.setup {
-  cmd = { "/Users/benjamin/.asdf/shims/solargraph", "stdio" },
-  capabilities = cmp.default_capabilities(capabilities)
-}
-nvim_lsp.standardrb.setup {
-  cmd = { "/Users/benjamin/.asdf/shims/standardrb", "--lsp" },
   capabilities = cmp.default_capabilities(capabilities)
 }

@@ -4,13 +4,10 @@ alias zd="~/.zsh"
 # alias zd|~/.zsh|opens zsh directory
 
 alias ef="nvim ~/.zsh/functions"
-# alias ef|nvim ~/.zsh/functions|opens custom zsh functions in vscode
+# alias ef|nvim ~/.zsh/functions|opens custom zsh functions in neovim
 
-alias et="nvim ~/.zsh/themes/"
-# alias et|nvim ~/.zsh/themes|opens themes folder in vscode
-
-alias ek="nvim ~/.config/kitty/kitty.conf"
-# alias ek|nvim ~/.config/kitty/kitty.conf|opens the kitty terminal config in vscode 
+alias et="nvim ~/.config/ghostty/config"
+# alias et|nvim ~/.config/ghostty/config|opens the ghostty terminal config in neovim 
 
 alias ep='nvim ~/.zshrc'
 # alias ep|nvim /~.zshrc|opens the .zshrc file in vscode
@@ -89,3 +86,6 @@ alias tl='tmux ls'
 
 alias og='open $(git config --get remote.origin.url)'
 # alias og|open $(git config --get remote.origin.url)|opens the remote origin url in the browser
+
+alias v='/Users/benjamin/v/v'
+# alias v|./v|runs v in the current directory

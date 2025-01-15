@@ -104,11 +104,25 @@ return {
 	{
 		-- Highlight, edit, and navigate code
 		'nvim-treesitter/nvim-treesitter',
+		config = function(_, opts)
+			require("nvim-treesitter.configs").setup(opts)
+			local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+			parser_config.crystal = {
+				install_info = {
+					url = "~/tree-sitter-crystal",
+					files = { "src/parser.c", "src/scanner.c" },
+					branch = "main",
+				},
+				filetype = "cr",
+			}
+		end,
+
 		dependencies = {
 			'nvim-treesitter/nvim-treesitter-textobjects',
 		},
 		build = ':TSUpdate',
 	},
+	--
 
 	-- AUTO CLOSE TAGS
 	{
